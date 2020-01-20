@@ -1,20 +1,17 @@
----
-layout: default
-tags:
-  - post
----
+{% extends 'default.njk' %}
 {% from 'macros.njk' import gallery %}
 
+{% block content %}
 <section>
   <article class="pure-g">
     <div class="pure-u-1-6">
-      <a href="{{ url }}"><time>{{ date | formatDate('yyyy/MM/dd HH:mm') }}</time></a>
+      <a href="{{ url }}"><time>{{ date }}</time></a>
     </div>
 
     <div class="pure-u-5-6">
-      {% if content %}
+      {% if contents %}
         <div class="e-content">
-          {{ content | autolink | emojify | nl2br | safe }}
+          {{ contents | autolink | emojify | nl2br | safe }}
         </div>
       {% endif %}
       {% if photos %}
@@ -23,3 +20,4 @@ tags:
     </div>
   </article>
 </section>
+{% endblock %}

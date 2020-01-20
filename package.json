@@ -1,14 +1,14 @@
 {
-  "name": "datashaman-test",
+  "name": "datashaman-metalsmith",
   "version": "0.1.0",
-  "description": "Source for datashaman-test.now.sh.",
+  "description": "Source for datashaman-metalsmith.now.sh.",
   "private": true,
   "scripts": {
     "build": "make build"
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/datashaman/datashaman-test.git"
+    "url": "git://github.com/datashaman/datashaman-metalsmith.git"
   },
   "author": {
     "name": "Marlin Forbes",
@@ -16,29 +16,23 @@
     "url": "https://datashaman.com/"
   },
   "license": "MIT",
-  "homepage": "https://datashaman-test.now.sh/",
+  "homepage": "https://datashaman-metalsmith.now.sh/",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "@11ty/eleventy-navigation": "^0.1.3",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "async": "^3.1.0",
     "autolinker": "^3.11.1",
     "concurrently": "^5.0.2",
     "domtastic": "^0.15.12",
-    "eleventy-plugin-local-images": "github:datashaman/eleventy-plugin-local-images#feature/use-existing",
-    "eleventy-plugin-sass": "^1.0.0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-prettier": "^3.1.2",
     "feed": "datashaman/feed#hotfix/self-links",
     "get-urls": "^9.2.0",
     "got": "^10.2.2",
-    "gulp-concat": "^2.6.1",
-    "html-entities": "^1.2.1",
+    "gray-matter": "^4.0.2",
     "husky": "^4.0.10",
-    "markdown-it": "^8.4.2",
-    "markdown-it-anchor": "^5.2.5",
+    "jstransformer-nunjucks": "^1.0.0",
+    "metalsmith": "^2.3.0",
+    "metalsmith-drafts": "^1.0.0",
+    "metalsmith-layouts": "^2.3.1",
+    "metalsmith-markdown": "^1.3.0",
+    "metalsmith-permalinks": "^2.2.0",
+    "metalsmith-sass": "^1.7.0",
     "metascraper": "^5.10.3",
     "metascraper-description": "^5.10.3",
     "metascraper-image": "^5.10.3",
@@ -46,7 +40,6 @@
     "metascraper-title": "^5.10.3",
     "metascraper-url": "^5.10.3",
     "node-emoji": "^1.10.0",
-    "node-uuid": "^1.4.8",
     "nunjucks-date": "^1.4.0",
     "prettier": ">= 1.13.0",
     "pretty-quick": "^2.0.1",
@@ -61,5 +54,8 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "dependencies": {
+    "metalsmith-default-values": "^3.0.0"
   }
 }

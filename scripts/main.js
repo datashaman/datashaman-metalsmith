@@ -6,7 +6,13 @@ $(document).ready(() => {
       console.log('Clicked on thumbnail')
       evt.preventDefault()
 
-      $($(this).attr('href')).addClass('lightbox--show')
+      $($(this).attr('href'))
+        .addClass('lightbox--show')
+        .find('.lightbox__close')
+        .get(0)
+        .focus()
+
+      return false
     })
     .on('click', '.lightbox__close', function(evt) {
       console.log('Clicked close')
@@ -15,11 +21,43 @@ $(document).ready(() => {
       $(this)
         .closest('.lightbox')
         .removeClass('lightbox--show')
+
+      return false
     })
-    .on('keyup', function(evt) {
-      console.log(evt)
-      if (evt.keyCode === 27) {
-        $('.lightbox--show').removeClass('lightbox--show')
+    .on('keyup', '.lightbox__close', function(evt) {
+      let next, prev
+
+      evt.preventDefault()
+
+      switch (evt.key) {
+        case 'Esc':
+        case 'Escape':
+          $('.lightbox--show').removeClass('lightbox--show')
+
+          break
+        case 'Left':
+        case 'ArrowLeft':
+          prev = $('.lightbox-show').data('prev')
+
+          if (prev) {
+            $('.lightbox--show').removeClass('lightbox--show')
+            $(prev).addClass('lightbox--show')
+          }
+
+          break
+        case 'Right':
+        case 'ArrowRight':
+          next = $('.lightbox-show').data('next')
+
+          if (next) {
+            evt.preventDefault()
+            $('.lightbox--show').removeClass('lightbox--show')
+            $(next).addClass('lightbox--show')
+          }
+
+          break
       }
+
+      return false
     })
 })
