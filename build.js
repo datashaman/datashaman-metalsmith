@@ -1,3 +1,5 @@
+require('dotenv').config()
+
 const Metalsmith = require('metalsmith')
 const path = require('path')
 
@@ -21,6 +23,17 @@ const metalsmith = Metalsmith(__dirname, '..')
       engine: 'nunjucks',
       engineOptions: {
         filters: require('./lib/filters'),
+      },
+    })
+  )
+  .use(
+    require('metalsmith-watch')({
+      livereload: true,
+      paths: {
+        '${source}/**/*': true,
+        'layouts/**/*': true,
+        'lib/**/*': true,
+        'scripts/**/*': true,
       },
     })
   )

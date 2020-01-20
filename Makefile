@@ -4,8 +4,8 @@ WEBPACK_FLAGS =
 default: build
 
 build:
-	webpack $(WEBPACK_FLAGS)
 	node build.js
+	webpack $(WEBPACK_FLAGS)
 
 build-npm:
 	cd node_modules/feed && npm install && npm run build

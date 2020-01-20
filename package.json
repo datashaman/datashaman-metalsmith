@@ -21,6 +21,7 @@
     "autolinker": "^3.11.1",
     "concurrently": "^5.0.2",
     "domtastic": "^0.15.12",
+    "dotenv": "^8.2.0",
     "feed": "datashaman/feed#hotfix/self-links",
     "get-urls": "^9.2.0",
     "got": "^10.2.2",
@@ -33,6 +34,7 @@
     "metalsmith-markdown": "^1.3.0",
     "metalsmith-permalinks": "^2.2.0",
     "metalsmith-sass": "^1.7.0",
+    "metalsmith-watch": "^1.0.3",
     "metascraper": "^5.10.3",
     "metascraper-description": "^5.10.3",
     "metascraper-image": "^5.10.3",
@@ -54,8 +56,5 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
-  },
-  "dependencies": {
-    "metalsmith-default-values": "^3.0.0"
   }
 }
