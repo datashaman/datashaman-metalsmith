@@ -3,7 +3,6 @@ import $ from 'domtastic'
 $(document).ready(() => {
   $(document)
     .on('click', '.lightbox__thumbnail', function(evt) {
-      console.log('Clicked on thumbnail')
       evt.preventDefault()
 
       $($(this).attr('href'))
@@ -15,7 +14,6 @@ $(document).ready(() => {
       return false
     })
     .on('click', '.lightbox__close', function(evt) {
-      console.log('Clicked close')
       evt.preventDefault()
 
       $(this)

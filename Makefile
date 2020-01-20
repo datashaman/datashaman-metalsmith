@@ -1,11 +1,10 @@
 ELEVENTY_FLAGS =
 WEBPACK_FLAGS =
 
-default: build
+default: watch
 
 build:
-	node build.js
-	webpack $(WEBPACK_FLAGS)
+	nodemon build.js
 
 build-npm:
 	cd node_modules/feed && npm install && npm run build
@@ -22,6 +21,9 @@ lint:
 
 serve:
 	concurrently "webpack $(WEBPACK_FLAGS) --watch" "eleventy $(ELEVENTY_FLAGS) --serve"
+
+watch:
+	nodemon watch.js
 
 wip:
 	git add .; git commit -m "wip"; git push

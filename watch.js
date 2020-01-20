@@ -1,7 +1,7 @@
 require('./bootstrap')
 
-const debug = require('debug')('build')
+const debug = require('debug')('watch')
 const metalsmith = require('./lib/metalsmith')
 const built = require('./lib/utils').built
 
-metalsmith.build(built(debug))
+metalsmith.use(require('metalsmith-serve')()).build(built(debug))

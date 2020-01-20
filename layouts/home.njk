@@ -2,23 +2,21 @@
 {% from 'macros.njk' import gallery %}
 
 {% block content %}
-<section>
-  {% for page in collections.post %}
+{% for page in posts %}
   <article class="pure-g">
     <div class="pure-u-1-6">
-      <a href="{{ page.url }}"><time>{{ page.date }}</time></a>
+      <a href="{{ page.path }}"><time>{{ page.date | moment('YYYY/MM/DD HH:mm') }}</time></a>
     </div>
 
     <div class="pure-u-5-6">
-      {% if page.data.summary or page.templateContent %}
+      {% if page.summary or page.contents %}
         <div class="e-content">
-          {{ page.data.summary | default(page.templateContent) | autolink | emojify | nl2br | safe }}
-          {% if page.data.summary %}<a href="{{ page.url }}">more</a>{% endif %}
+          {{ page.summary | default(page.contents.toString()) | autolink | emojify | nl2br | safe }}
+          {% if page.summary %}<a href="{{ page.path }}">more</a>{% endif %}
         </div>
       {% endif %}
-      {% if page.data.photos %}{{ gallery(page, page.data.photos, 120) }}{% endif %}
+      {% if page.photos %}{{ gallery(page, page.photos, 120) }}{% endif %}
     </div>
   </article>
-  {% endfor %}
-</section>
+{% endfor %}
 {% endblock %}
