@@ -20,9 +20,6 @@ lint:
 	stylelint styles
 
 serve:
-	concurrently "webpack $(WEBPACK_FLAGS) --watch" "eleventy $(ELEVENTY_FLAGS) --serve"
-
-watch:
 	nodemon watch.js
 
 wip:

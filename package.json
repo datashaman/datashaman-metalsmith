@@ -32,6 +32,7 @@
     "metalsmith": "^2.3.0",
     "metalsmith-better-excerpts": "^0.2.1",
     "metalsmith-collections": "^0.9.0",
+    "metalsmith-date-in-filename": "0.0.14",
     "metalsmith-drafts": "^1.0.0",
     "metalsmith-in-place": "^4.4.1",
     "metalsmith-layouts": "^2.3.1",
