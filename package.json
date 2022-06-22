@@ -24,7 +24,7 @@
     "dotenv": "^8.2.0",
     "feed": "datashaman/feed#hotfix/self-links",
     "get-urls": "^9.2.0",
-    "got": "^10.2.2",
+    "got": "^11.8.5",
     "gray-matter": "^4.0.2",
     "husky": "^4.0.10",
     "jstransformer-markdown": "^1.2.1",
